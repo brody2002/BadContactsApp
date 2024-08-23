@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  AddressBookWithPropertyWrappers
-//
-//  Created by Ben Stone on 3/3/21.
-//
+
 
 import SwiftUI
 
@@ -12,7 +7,7 @@ struct AddressBookView: View {
     private var viewModel = AddressBookViewModel()
     
     // TODO: STATE - Add property wrapper to displayFavoriteCount property so it can be reassigned
-    private var displayFavoriteCount = true
+    @State private var displayFavoriteCount = true
     
     var body: some View {
         VStack {
@@ -20,7 +15,9 @@ struct AddressBookView: View {
                 .font(.title)
                 .padding()                               
             Spacer()
-            ContactsView() //TODO: ENVIRONMENTOBJECT - Pass the viewModel to the ContactsView
+            ContactsView()
+                .environmentObject(viewModel)
+            //TODO: ENVIRONMENTOBJECT - Pass the viewModel to the ContactsView
             Spacer()
             if displayFavoriteCount {
                 HStack {
@@ -30,8 +27,10 @@ struct AddressBookView: View {
                 }
             }
             // TODO: STATE - Add toggle for displayFavoriteCount
+            Toggle("Display number of favorites", isOn: $displayFavoriteCount)
+                .padding()
         }
-        .background(Color(red: 254/255, green: 240/255, blue: 229/255).ignoresSafeArea())
+        .background(Color(red: 0/255, green: 142/255, blue: 237/255).ignoresSafeArea())
     }
 }
 

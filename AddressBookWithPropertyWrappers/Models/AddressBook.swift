@@ -1,18 +1,12 @@
-//
-//  AddressBook.swift
-//  AddressBook
-//
-//  Created by Ben Stone on 2/12/21.
-//
 
 import Foundation
 
 struct AddressBook {
     private var contacts = [
-        Contact(name: "Alexis", postalCode: 12429),
-        Contact(name: "Ben", postalCode: 10012),
-        Contact(name: "Bhaskar", postalCode: 14204),
-        Contact(name: "Galina", postalCode: 13029)
+        Contact(name: "Brody", postalCode: "94107"),
+        Contact(name: "Sarah", postalCode: "95616"),
+        Contact(name: "MA", postalCode: "94107"),
+        Contact(name: "KaiRo", postalCode: "?????")
     ]
     
     mutating func toggleFavorite(atIndex index: Int) {
